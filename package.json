@@ -1,5 +1,5 @@
 {
-  "name": "altar-gg/schemas",
+  "name": "@altar-gg/schemas",
   "version": "1.0.0",
   "description": "Mongoose.js based Structured Documents",
   "main": "index.js",

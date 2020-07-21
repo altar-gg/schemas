@@ -1,19 +1,15 @@
 const mongoose = require("mongoose");
-const extend = require("mongoose-schema-extend");
-
 const {Schema} = mongoose;
 
-const schema = new Schema({
-    username: {
+const DetailedUser = require("./DetailedUser");
+const Scheme = DetailedUser.extend({
+
+    password: {
         type: String,
-        required: true,
-        minlength: 3,
-        maxlength: 24,
-        lowercase: true,
-        alphanumeric: true,
-        trim: true
+        required: true
     }
+
 });
 
-const model = mongoose.model("User", schema);
-module.exports = schema;
+const model = mongoose.model("User", Scheme);
+module.exports = Scheme;

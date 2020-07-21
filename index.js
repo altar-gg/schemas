@@ -1,18 +1,17 @@
 require("mongoose-valid8");
 const mongoose = require("mongoose");
+const extend = require("mongoose-schema-extend");
 
 const User = {
-    StoredUser: require("./user/StoredUser"),
-    User: require("./user/User")
+    User: require("./user/User"),
+    DetailedUser: require("./user/DetailedUser"),
+    PublicUser: require("./user/PublicUser")
 }
 
-
-const Schemas = {
+module.exports =  {
     mongoose, 
 
     ...User
 };
-
-module.exports = Schemas;
 
 //const schemas = require("@altar-gg/schemas");
