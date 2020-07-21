@@ -1,5 +1,5 @@
 {
-  "name": "schemas",
+  "name": "altar-gg/schemas",
   "version": "1.0.0",
   "description": "Mongoose.js based Structured Documents",
   "main": "index.js",
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/altar-gg/schemas#readme",
   "dependencies": {
-    "mongoose": "^5.9.25"
+    "mongoose": "^5.9.25",
+    "mongoose-schema-extend": "github:kennylmay/mongoose-schema-extend",
+    "mongoose-valid8": "^1.6.22"
   }
 }
