@@ -1,0 +1,28 @@
+{
+  "name": "schemas",
+  "version": "1.0.0",
+  "description": "Mongoose.js based Structured Documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altar-gg/schemas.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "rubybb",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/altar-gg/schemas/issues"
+  },
+  "homepage": "https://github.com/altar-gg/schemas#readme",
+  "dependencies": {
+    "mongoose": "^5.9.25"
+  }
+}
