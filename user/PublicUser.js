@@ -1,10 +1,19 @@
 const mongoose = require("mongoose");
 
-const Bitfield = require("bitfield");
+//const Bitfield = require("bitfield");
 const UserMeta = require("./UserMeta");
 const {Schema} = mongoose;
 
 const Scheme = new Schema({
+
+    uuid: {
+        type: String,
+        required: true,
+        uuid: true,
+        index: true,
+        unique: true
+    },
+
     username: {
         type: String,
         required: true,
@@ -18,17 +27,9 @@ const Scheme = new Schema({
     },
 
     meta: {
-        type: Number,
-        default: 0,
-
-        get: function (value) {
-            return new Bitfield(value, UserMeta);
-        },
-
-        set: function (value) {
-            if (value instanceof Bitfield) return value.toJSON();
-            return value;
-        }
+        type: "bitfield",
+        default: UserMeta.default(),
+        flags: UserMeta
     }
 
 }, {
