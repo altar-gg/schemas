@@ -28,5 +28,6 @@
     "mongoose-schema-extend": "github:kennylmay/mongoose-schema-extend",
     "mongoose-valid8": "^1.6.22",
     "uuid": "^8.2.0"
-  }
+  },
+  "devDependencies": {}
 }

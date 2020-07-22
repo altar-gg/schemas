@@ -1,8 +1,9 @@
-require("mongoose-valid8");
 const mongoose = require("mongoose");
-const extend = require("mongoose-schema-extend");
 
-const Bitfield = require("./Bitfield")
+require("mongoose-schema-extend");
+require("mongoose-valid8");
+
+require("./SchemaBitfield");
 
 const User = {
     User: require("./user/User"),
@@ -13,8 +14,6 @@ const User = {
 
 module.exports =  {
     mongoose, 
-
-    Bitfield,
 
     ...User
 };
