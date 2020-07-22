@@ -1,17 +1,16 @@
 const mongoose = require("mongoose");
+const uuid = require('uuid');
 
-//const Bitfield = require("bitfield");
 const UserMeta = require("./UserMeta");
 const {Schema} = mongoose;
 
 const Scheme = new Schema({
 
-    uuid: {
+    _id: {
         type: String,
+        default: uuid.v4,
         required: true,
-        uuid: true,
-        index: true,
-        unique: true
+        uuid: true
     },
 
     username: {
@@ -40,7 +39,24 @@ const Scheme = new Schema({
         currentTime: () => {
             return Date.now();
         }
+    },
+
+    toJSON: {
+        getters: true,
+        versionKey: false,
+        transform: function (document, output, options) {
+
+            delete output.email_unique;
+            delete output.__t;
+            delete output._id;
+
+            return output;
+        }
     }
+});
+
+Scheme.virtual('avatar').get(function () {
+    return "https://cdn.altar.gg/avatars/" + this.id;
 });
 
 const model = mongoose.model("PublicUser", Scheme);

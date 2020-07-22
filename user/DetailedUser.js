@@ -12,6 +12,15 @@ const Scheme = PublicUser.extend({
         unique: true
     },
 
+    verified: {
+        type: Boolean,
+        default: false
+    },
+
+    disabled: {
+        type: Boolean,
+        default: false
+    },
 });
 
 const model = mongoose.model("DetailedUser", Scheme);
