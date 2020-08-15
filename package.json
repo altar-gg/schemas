@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/altar-gg/schemas#readme",
   "dependencies": {
-    "bitfield": "git+https://github.com/rubybb/bitfield.git",
+    "mongodb": "^3.5.9",
     "mongoose": "^5.9.25",
     "mongoose-schema-extend": "github:kennylmay/mongoose-schema-extend",
     "mongoose-valid8": "^1.6.22",

@@ -23,12 +23,6 @@ const Scheme = new Schema({
         trim: true,
         index: true,
         unique: true
-    },
-
-    meta: {
-        type: "bitfield",
-        default: UserMeta.default(),
-        flags: UserMeta
     }
 
 }, {
