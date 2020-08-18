@@ -1,2 +1,2 @@
-# altar.gg: schemas
+# altar.gg/schemas
 Mongoose Structured Documents for Altar.gg
