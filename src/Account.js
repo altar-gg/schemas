@@ -26,6 +26,7 @@ const Scheme = new Schema({
 	email: {
 		type: String,
 		required: true,
+		visibility: ["personal"],
 		email: true,
 		index: true,
 		unique: true
@@ -64,11 +65,17 @@ const Scheme = new Schema({
 	toJSON: {
 		getters: true,
 		versionKey: false,
-		transform: function (document, output) {
+		transform: function (document, output, options) {
 
 			Object.keys(document.schema.paths).forEach(key => {
 				let path = document.schema.paths[key];
+                
 				if (path.options["hidden"]) delete output[key];
+				if (path.options["visibility"]) {
+					if (!path.options["visibility"].includes(options.visibility)) {
+						delete output[key];
+					}
+				}
 			});
 
 			delete output.email_unique;
