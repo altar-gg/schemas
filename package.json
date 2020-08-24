@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/altar-gg/schemas#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.25",
     "mongoose-schema-extend": "github:kennylmay/mongoose-schema-extend",

@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const uuid = require("uuid");
+
 const {Schema} = mongoose;
 
-const Scheme = new Schema({
+const scheme = new Schema({
 
 	_id: {
 		type: String,
 		default: uuid.v4,
 		required: true,
+		hidden: true,
 		uuid: true
 	},
 
@@ -48,8 +51,7 @@ const Scheme = new Schema({
 		type: String,
 		required: true,
 		hidden: true,
-		minlength: 8,
-		maxlength: 64,
+		minlength: 8
 	}
 
 }, {
@@ -80,16 +82,22 @@ const Scheme = new Schema({
 
 			delete output.email_unique;
 			delete output.__t;
-			delete output._id;
 
 			return output;
 		}
 	}
 });
 
-Scheme.virtual("avatar").get(function () {
+scheme.pre("save", async function (next) {
+	if (this.isModified("password")) {
+		this.password = await bcrypt.hash(this.password, );
+	}
+
+	next();
+});
+
+scheme.virtual("avatar").get(function () {
 	return "https://cdn.altar.gg/avatars/" + this.id;
 });
 
-mongoose.model("account", Scheme);
-module.exports = Scheme;
+module.exports = mongoose.model("account", scheme);
