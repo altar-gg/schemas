@@ -90,7 +90,7 @@ const scheme = new Schema({
 
 scheme.pre("save", async function (next) {
 	if (this.isModified("password")) {
-		this.password = await bcrypt.hash(this.password, );
+		this.password = await bcrypt.hash(this.password, 10);
 	}
 
 	next();
