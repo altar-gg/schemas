@@ -24,11 +24,11 @@
   "homepage": "https://github.com/altar-gg/schemas#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
-    "mongodb": "^3.5.9",
-    "mongoose": "^5.9.25",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
     "mongoose-schema-extend": "github:kennylmay/mongoose-schema-extend",
-    "mongoose-valid8": "^1.6.22",
-    "uuid": "^8.2.0"
+    "mongoose-valid8": "^1.6.25",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "eslint": "^7.7.0"
